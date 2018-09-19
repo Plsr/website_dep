@@ -1,0 +1,24 @@
+---
+layout: default
+title: Home
+---
+
+<div class="bIntroSection">
+  <h1 class="bIntroSection-title">Hi, I'm Chris 👋</h1>
+  <span class="bIntroSection-subline">Designer and Fullstack Developer</span>
+  <div class="bIntroSection-text">
+    <p>
+      I like building web applications using ReactJS and Ruby on Rails.  I’m interested in cycling, writing and mechanical keyboards.
+      Currently, I’m working at <a href="https://railslove.com">Railslove</a>.
+    </p>
+    <p>
+      Drop me a line at
+      <a href="mailto:hello@christianpoplawski.de">hello@christianpoplawski.de</a>
+    </p>
+  </div>
+</div>
+
+{% assign posts = site.posts | where:"type", "article" %}
+{% for post in posts %}
+  {{ post.title }}
+{% endfor %}
