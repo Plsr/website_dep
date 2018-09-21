@@ -19,6 +19,6 @@ title: Home
 </div>
 
 {% assign posts = site.posts | where:"type", "article" %}
-{% for post in posts %}
+{% for post in posts limit: 3 %}
   {{ post.title }}
 {% endfor %}
