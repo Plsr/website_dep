@@ -18,7 +18,19 @@ title: Home
   </div>
 </div>
 
-{% assign posts = site.posts | where:"type", "article" %}
-{% for post in posts limit: 3 %}
-  {{ post.title }}
-{% endfor %}
+<div class="bArticleRecommendations">
+  <h2 class="bArticleRecommendations-title">Recent Articles</h2>
+  {% assign posts = site.posts | where:"type", "article" %}
+  {% for post in posts limit: 3 %}
+    <div class="aArticlePreview">
+      <a href="{{post.url}}" class="aArticlePreview-title">{{ post.title }}</a>
+      <div class="aArticlePreview-excerpt">
+        {{post.excerpt | truncate: 140 }}
+      </div>
+      {% for tag in post.tags limit: 2 %}
+        <span class="aTag">{{ tag }}</span>
+      {% endfor %}
+    </div>
+  {% endfor %}
+</div>
+
