@@ -1,0 +1,24 @@
+/**
+ * TODO:
+ * This is currently working, but it does still need some more tweaks:
+ *
+ * 1. The single elements need some padding to their sides
+ * 2. The elements all have a different height on bigger devices, which looks awkward.
+ *    Maybe using a grid layout here would work better. Need to check browser compatibility.
+ */
+.aArticlesList
+  display: flex
+  flex-direction: column
+
+  @include for-tablet-portrait-up
+    flex-direction: row
+
+  &-item
+    flex-basis: 100%
+    flex-grow: 0
+    flex-shrink: 0
+
+    @include for-tablet-portrait-up
+      flex-basis: 33%
+      flex-grow: 0
+      flex-shrink: 0
