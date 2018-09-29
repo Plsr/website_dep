@@ -4,34 +4,38 @@ title: Home
 ---
 
 <div class="bIntroSection">
-  <h1 class="bIntroSection-title">Hi, I'm Chris 👋</h1>
-  <span class="bIntroSection-subline">Designer and Fullstack Developer</span>
-  <div class="bIntroSection-text">
-    <p>
-      I like building web applications using ReactJS and Ruby on Rails.  I’m interested in cycling, writing and mechanical keyboards.
-      Currently, I’m working at <a href="https://railslove.com">Railslove</a>.
-    </p>
-    <p>
-      Drop me a line at
-      <a href="mailto:hello@christianpoplawski.de">hello@christianpoplawski.de</a>
-    </p>
+  <div class="aWrapper">
+    <h1 class="bIntroSection-title">Hi, I'm Chris 👋</h1>
+    <span class="bIntroSection-subline">Designer and Fullstack Developer</span>
+    <div class="bIntroSection-text">
+      <p>
+        I like building web applications using ReactJS and Ruby on Rails.  I’m interested in cycling, writing and mechanical keyboards.
+        Currently, I’m working at <a href="https://railslove.com">Railslove</a>.
+      </p>
+      <p>
+        Drop me a line at
+        <a href="mailto:hello@christianpoplawski.de">hello@christianpoplawski.de</a>
+      </p>
+    </div>
   </div>
 </div>
 
 <div class="bArticleRecommendations">
-  <h2 class="bArticleRecommendations-title">Recent Articles</h2>
-  {% assign posts = site.posts | where:"type", "article" %}
-  {% for post in posts limit: 3 %}
-    <div class="aArticlePreview">
-      <a href="{{post.url}}" class="aArticlePreview-title">{{ post.title }}</a>
-      <div class="aArticlePreview-excerpt">
-        {{post.excerpt | truncate: 140 }}
+  <div class="aWrapper">
+    <h2 class="bArticleRecommendations-title">Recent Articles</h2>
+    {% assign posts = site.posts | where:"type", "article" %}
+    {% for post in posts limit: 3 %}
+      <div class="aArticlePreview">
+        <a href="{{post.url}}" class="aArticlePreview-title">{{ post.title }}</a>
+        <div class="aArticlePreview-excerpt">
+          {{post.excerpt | truncate: 140 }}
+        </div>
+        {% for tag in post.tags limit: 2 %}
+          <span class="aTag">{{ tag }}</span>
+        {% endfor %}
       </div>
-      {% for tag in post.tags limit: 2 %}
-        <span class="aTag">{{ tag }}</span>
-      {% endfor %}
-    </div>
-  {% endfor %}
-  <a href="/articles" class="bArticleRecommendations-more">See all articles</a>
+    {% endfor %}
+    <a href="/articles" class="bArticleRecommendations-more">See all articles</a>
+  </div>
 </div>
 
