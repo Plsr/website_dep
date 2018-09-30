@@ -31,9 +31,6 @@ title: Home
 					<div class="aArticlePreview-excerpt">
 						{{post.excerpt | truncate: 140 }}
 					</div>
-					{% for tag in post.tags limit: 2 %}
-						<span class="aTag">{{ tag }}</span>
-					{% endfor %}
 				</div>
 			{% endfor %}
 		</div>
