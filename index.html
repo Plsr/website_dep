@@ -24,7 +24,7 @@ title: Home
   <div class="aWrapper">
     <h2 class="bArticleRecommendations-title">Recent Articles</h2>
     {% assign posts = site.posts | where:"type", "article" %}
-		<div class="aArticlesList">
+		<div class="bArticleRecommendations-list aArticlesList">
 			{% for post in posts limit: 3 %}
 				<div class="aArticlesList-item aArticlePreview">
 					<a href="{{post.url}}" class="aArticlePreview-title">{{ post.title }}</a>
